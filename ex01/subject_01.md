@@ -24,9 +24,12 @@ As before, write getters for all attributes and overload the insertion («) oper
 print all the form’s information.
 
 Also, add a beSigned() member function to the Form that takes a Bureaucrat as a
-parameter. It changes the form’s status to signed if the bureaucrat’s grade is high enough
+parameter. 
+
+It changes the form’s status to signed if the bureaucrat’s grade is high enough
 (greater than or equal to the required one). Remember, grade 1 is higher than grade 2.
 If the grade is too low, throw a Form::GradeTooLowException.
+
 Then, modify the signForm() member function in the Bureaucrat class. This function must call Form::beSigned() to attempt to sign the form. If the form is signed
 successfully, it will print something like:
 <bureaucrat> signed <form>

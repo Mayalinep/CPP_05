@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = form
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -6,7 +6,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 # Dossier pour les fichiers objets
 OBJ_DIR = obj
 
-SRCS = Bureaucrat.cpp main.cpp
+SRCS = Bureaucrat.cpp Form.cpp main.cpp
 
 # Les objets vont dans le dossier obj/
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
