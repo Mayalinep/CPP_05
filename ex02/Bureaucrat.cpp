@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
 
@@ -54,13 +54,22 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 	return "Grade too low";
 }
 
-void Bureaucrat::signForm(Form& form){
+void Bureaucrat::signForm(AForm& aform){
 	try {
-		form.beSigned(*this);
-		std::cout << getName() << " signed " << form.getName() << std::endl;
+		aform.beSigned(*this);
+		std::cout << getName() << " signed " << aform.getName() << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cout << getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << getName() << " couldn't sign " << aform.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm& aform){
+	try {
+		aform.execute(*this);
+	}
+	catch (std::exception& e) {
+		std::cout << getName() << " couldn't execute " << aform.getName() << " because " << e.what() << std::endl;
 	}
 }
 
